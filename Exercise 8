@@ -1,0 +1,28 @@
+/* 
+ * Programmer: Anthony Ruthruff
+ * Date: 02/10/2024
+ * Purpose: 
+ * Class: CITP 180
+ * Assignment: Chapter 3 - Programming Excercise 8
+ */
+
+
+using System;
+using static System.Console;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+
+            ReadKey();
+        }
+    }
+}

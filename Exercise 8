@@ -3,7 +3,7 @@
  *             Richard Carson
  *             Nathan Wenson
  * Date: 02/10/2024
- * Purpose: 
+ * Purpose: This program receives input of quantity of granola bars and cost, computes a monetary value of proceeds, and gives 10% to the student government association
  * Class: CITP 180
  * Assignment: Chapter 3 - Programming Excercise 8
  */

@@ -16,13 +16,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp
+namespace Group_Assignment
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            
+            int casePrice = 5;
+
+            WriteLine("Price per case is $5\n");
+            WriteLine("Enter quantity of cases sold: ");
+
+            int caseResult = Convert.ToInt32(ReadLine());
+
+            WriteLine("Your total is {0:c}: " , + casePrice *  caseResult);
 
             ReadKey();
         }

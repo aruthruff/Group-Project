@@ -22,15 +22,27 @@ namespace Group_Assignment
     {
         static void Main(string[] args)
         {
-            WriteLine("Price per case is $5\n");
+            WriteLine("Thanks for contributing to the computer club!");
+            WriteLine("Price per case is $5");
+            WriteLine("There is a 10% Student Government Association FEE (will be automatically deducted)\n");
+
+            double sgaFee = .01;
 
             WriteLine("Enter quantity of cases sold: ");
-            int caseQuantity = Convert.ToInt32(ReadLine());
+            double caseQuantity = Convert.ToDouble(ReadLine());
+            WriteLine();
 
             WriteLine("Enter cost per case: ");
-            int casePrice = Convert.ToInt32(ReadLine());
+            double casePrice = Convert.ToDouble(ReadLine());
+            WriteLine();
 
-            WriteLine("Your total proceeds before 10% GAC fee is {0:c}: " , + casePrice *  caseQuantity);
+            WriteLine("Your total proceeds BEFORE 10% SGA fee is: {0:c}\n " , + casePrice *  caseQuantity);
+            double caseResult = casePrice * caseQuantity;
+
+            WriteLine("10% GAC fee is {0:c}:\n ", + sgaFee * caseResult);
+            double proceedTotal = sgaFee * caseResult;
+            double realTotal = caseResult - proceedTotal;
+            WriteLine("Your total proceeds AFTER 10% SGA fee is: {0:c} ", + realTotal);
 
             ReadKey();
         }

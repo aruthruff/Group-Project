@@ -22,14 +22,15 @@ namespace Group_Assignment
     {
         static void Main(string[] args)
         {
-            int casePrice = 5;
-
             WriteLine("Price per case is $5\n");
+
             WriteLine("Enter quantity of cases sold: ");
+            int caseQuantity = Convert.ToInt32(ReadLine());
 
-            int caseResult = Convert.ToInt32(ReadLine());
+            WriteLine("Enter cost per case: ");
+            int casePrice = Convert.ToInt32(ReadLine());
 
-            WriteLine("Your total is {0:c}: " , + casePrice *  caseResult);
+            WriteLine("Your total proceeds before 10% GAC fee is {0:c}: " , + casePrice *  caseQuantity);
 
             ReadKey();
         }

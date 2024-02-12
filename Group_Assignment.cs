@@ -39,7 +39,7 @@ namespace Group_Assignment
             WriteLine("Your total proceeds BEFORE 10% SGA fee is: {0:c}\n " , + casePrice *  caseQuantity);
             double caseResult = casePrice * caseQuantity;
 
-            WriteLine("10% GAC fee is {0:c}:\n ", + sgaFee * caseResult);
+            WriteLine("10% SGA fee is {0:c}:\n ", + sgaFee * caseResult);
             double proceedTotal = sgaFee * caseResult;
             double realTotal = caseResult - proceedTotal;
             WriteLine("Your total proceeds AFTER 10% SGA fee is: {0:c} ", + realTotal);

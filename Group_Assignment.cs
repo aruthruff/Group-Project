@@ -26,7 +26,7 @@ namespace Group_Assignment
             WriteLine("Price per case is $5");
             WriteLine("There is a 10% Student Government Association FEE (will be automatically deducted)\n");
 
-            double sgaFee = .01;
+            double sgaFee = .1;
 
             WriteLine("Enter quantity of cases sold: ");
             double caseQuantity = Convert.ToDouble(ReadLine());

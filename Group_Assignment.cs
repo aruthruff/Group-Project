@@ -24,14 +24,14 @@ namespace Group_Assignment
         static void ProjectIntro() {
             
             WriteLine("Thanks for contributing to the computer club!");
-            WriteLine("Price per case is $5");
+            WriteLine("Vendor charges $5 per case (will be automatically deducted)");
             WriteLine("There is a 10% Student Government Association FEE (will be automatically deducted)\n");
 
         }
         static void SalesProject()
         {
             double sgaFee = .1;                      //10% Student Government Association Fee
-            double fiveFee = 2.4;
+            double vendorFee = 2.4;                  //$5 per case vendor fee
 
             WriteLine("Enter quantity of cases sold: (12 bars in a case) ");
             double caseQuantity = Convert.ToDouble(ReadLine()); //Customer Input for quantity of granola bars sold
@@ -42,20 +42,20 @@ namespace Group_Assignment
             double barPrice = Convert.ToDouble(ReadLine());    //Customer Input for cost of granola bars
             WriteLine();
 
-            WriteLine("Your total earnings before expenses: \n{0:c}\n ", +barPrice * caseQuantity);     //Output for proceeds BEFORE SGA fee
-            double caseResult = barPrice * caseQuantity;                                                //Calculate factor for barPrice and caseQuantity
+            WriteLine("Your total earnings before expenses: \n{0:c}\n ", + barPrice * caseQuantity);     //Output for proceeds BEFORE SGA fee
+            double grossAmount = barPrice * caseQuantity;                                                //Calculate factor for barPrice and caseQuantity
             
-            WriteLine("Amount you paid to vendor: \n{0:c}\n ", + caseResult / fiveFee);
-            double caseExpense = caseResult / fiveFee;
-            WriteLine("Total proceeds after case expenses: \n{0:c}\n ", + caseResult - caseExpense);
+            WriteLine("Amount you paid to vendor: \n{0:c}\n ", + grossAmount / vendorFee);
+            double caseExpense = grossAmount / vendorFee;
+            WriteLine("Total proceeds after vendor expenses: \n{0:c}\n ", + grossAmount - caseExpense);
 
             
 
-            WriteLine("10% SGA fee is: \n{0:c}\n ", +sgaFee * caseResult);                                 // 10% SGA fee dollar amount 
-            double proceedTotal = sgaFee * caseResult;                                                   //Calculate factor for sgaFee and caseResult
-            double realTotal = caseResult - proceedTotal;                                                //Calculate difference for caseResult and proceedTotal
+            WriteLine("10% SGA fee is: \n{0:c}\n ", +sgaFee * grossAmount);                                 // 10% SGA fee dollar amount 
+            double netAmount = sgaFee * grossAmount;                                                   //Calculate factor for sgaFee and grossAmount
+            double grandTotal = grossAmount - netAmount;                                                //Calculate difference for grossAmount and netAmount
                            
-            WriteLine("Your grand total profits are: \n{0:c} ", realTotal - caseExpense);
+            WriteLine("Your grand total profits are: \n{0:c} ", grandTotal - caseExpense);
 
             ReadKey();
         }

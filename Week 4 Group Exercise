@@ -1,0 +1,52 @@
+using System;
+
+public class BMICalculator
+{
+    private double weight;
+    private double height;
+
+    public BMICalculator(double weight, double height)
+    {
+        this.weight = weight;
+        this.height = height;
+    }
+
+    public double CalculateBMI()
+    {
+        // Assuming weight is in kilograms and height is in meters
+        double bmi = weight / (height * height);
+        return bmi;
+    }
+
+    public string GetWeightStatus(double bmi)
+    {
+        if (bmi < 18.5)
+            return "Underweight";
+        else if (bmi >= 18.5 && bmi <= 24.9)
+            return "Normal";
+        else if (bmi >= 25 && bmi <= 29.9)
+            return "Overweight";
+        else
+            return "Obese";
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("Enter weight:");
+        double weight = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Enter height:");
+        double height = Convert.ToDouble(Console.ReadLine());
+
+        BMICalculator calculator = new BMICalculator(weight, height);
+
+        double bmi = calculator.CalculateBMI();
+        string weightStatus = calculator.GetWeightStatus(bmi);
+
+        Console.WriteLine($"BMI: {bmi}");
+        Console.WriteLine($"Weight Status: {weightStatus}");
+    }
+}

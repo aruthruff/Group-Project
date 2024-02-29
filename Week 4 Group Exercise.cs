@@ -1,6 +1,7 @@
 ﻿/* 
  * Programmer: Anthony Ruthruff
  *             Richard Carson
+                Nathan Wenson
  *             
  * Date: 02/20/2024
  * Purpose: This program works as a BMI calculator. It cane be utilized as Metric or Imperial.

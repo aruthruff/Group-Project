@@ -69,8 +69,6 @@ namespace Week6_Group
                 + direction + "\nSurface Type: " + surface + "\nMaintained by: " + tollMaintain;
         }
     }
-        
-    
     
     internal class Program
     {
@@ -78,11 +76,9 @@ namespace Week6_Group
         {
             Motorway motorway = new Motorway("US Highway 80"); //Call Instance method for highway name
             WriteLine(motorway);
-            WriteLine("");
             
             Motorway toll = new Motorway("International Highway 10", "Yes"); //Call Instance method for highway name and toll
             WriteLine(toll);
-            WriteLine("");
             
             Motorway lanes = new Motorway("State Highway 99", 5); //Call Instance method for highway name and number of lanes
             WriteLine(lanes);
@@ -90,7 +86,7 @@ namespace Week6_Group
             Motorway test = new Motorway("Boulevard", "North", "Blacktop", "State"); //Call Instance method to test remaining data members
             WriteLine(test);
 
-            Motorway test2 = new Motorway("Hiawatha Forest Highway", "No", 3, "Highway", "South", "Gravel", "Federal"); //Call Instance method to test all data members
+            Motorway test2 = new Motorway("Hiawatha Forest Highway", "No", 3, "Highway", "South", "Concrete", "Federal"); //Call Instance method to test all data members
             WriteLine(test2);
 
             ReadKey();

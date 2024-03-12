@@ -18,7 +18,7 @@ using System.Globalization;
 
 namespace Week6_Group
 {
-    class Motorway
+        class Motorway
     {
         public string highwayName;  //List of data members
         public string streetType;
@@ -31,9 +31,8 @@ namespace Week6_Group
         public Motorway(string highway)  //Instance method for highway name
         {
             highwayName = highway;
-            
         }
-
+            
         public Motorway(string highway, string Toll) //Instance method for highway name and toll
         { 
             highwayName= highway;
@@ -44,42 +43,33 @@ namespace Week6_Group
         {
             highwayName = highway;
             numberOfLanes = lanes;
-            
         }
-
+            
         public override string ToString() //ToString method to return data members and labels
         {
-            return "Name of Motorway: " + highwayName  + "\nToll: " + toll + "\nNumber of Lanes: " + numberOfLanes + "\nStreet Type: " +streetType + "\nDirection: " 
-                + direction + "\nSurface Type: " + surface + "Maintained by: " + tollMaintain;
+            return "\nName of Motorway: " + highwayName  + "\nToll: " + toll + "\nNumber of Lanes: " + numberOfLanes + "\nStreet Type: " +streetType + "\nDirection: " 
+                + direction + "\nSurface Type: " + surface + "\nMaintained by: " + tollMaintain;
         }
-
-
     }
-  
+    
     internal class Program
     {
         static void Main(string[] args)
         {
-           
-
-            Motorway motorway = new Motorway("I-96");
+            Motorway motorway = new Motorway("US Highway 80");
             WriteLine(motorway);
             WriteLine("");
             
-            Motorway toll1 = new Motorway("I-96", "Yes");
-            WriteLine(toll1);
+            Motorway toll = new Motorway("International Highway 10", "Yes");
+            WriteLine(toll);
             WriteLine("");
             
-            Motorway lanes1 = new Motorway("I-96", 5);
-            WriteLine(lanes1);
-
+            Motorway lanes = new Motorway("State Highway 99", 5);
+            WriteLine(lanes);
 
             ReadKey();
-
         }
-
     }
-
 }
             
 

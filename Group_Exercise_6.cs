@@ -24,7 +24,7 @@ namespace Week6_Group
         public string streetType; 
         public string direction; 
         public string surface; 
-        public int numberOfLanes;      
+        public int numberOfLanes = 2;  //Set number of lanes to 2 because default value is 0    
         public string toll;           
         public string tollMaintain;
 
@@ -45,7 +45,7 @@ namespace Week6_Group
             numberOfLanes = lanes;
         }
 
-        public Motorway(string street, string direct, string surf, string maint) //Additions method for flexibility
+        public Motorway(string street, string direct, string surf, string maint) //Additions method for flexibility to test remaining data members
         { 
             streetType = street;
             direction = direct;
@@ -53,20 +53,30 @@ namespace Week6_Group
             tollMaintain = maint;
         }
 
-        
-            
+        public Motorway(string highway, string Toll, int lanes, string street, string direct, string surf, string maint) //Additional method for flexibility to test all data members
+        {
+            highwayName = highway;
+            toll = Toll;
+            numberOfLanes = lanes;
+            streetType = street;
+            direction = direct;
+            surface = surf;
+            tollMaintain = maint;
+        }
         public override string ToString() //ToString method to return data members and labels
         {
             return "\nName of Motorway: " + highwayName  + "\nToll: " + toll + "\nNumber of Lanes: " + numberOfLanes + "\nStreet Type: " +streetType + "\nDirection: " 
                 + direction + "\nSurface Type: " + surface + "\nMaintained by: " + tollMaintain;
         }
     }
+        
+    
     
     internal class Program
     {
         static void Main(string[] args)
         {
-            Motorway motorway = new Motorway("US Highway 80"); //Call Instance method for highway name and toll
+            Motorway motorway = new Motorway("US Highway 80"); //Call Instance method for highway name
             WriteLine(motorway);
             WriteLine("");
             
@@ -79,6 +89,9 @@ namespace Week6_Group
 
             Motorway test = new Motorway("Boulevard", "North", "Blacktop", "State"); //Call Instance method to test remaining data members
             WriteLine(test);
+
+            Motorway test2 = new Motorway("Hiawatha Forest Highway", "No", 3, "Highway", "South", "Gravel", "Federal"); //Call Instance method to test all data members
+            WriteLine(test2);
 
             ReadKey();
         }

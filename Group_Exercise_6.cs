@@ -18,14 +18,14 @@ using System.Globalization;
 
 namespace Week6_Group
 {
-        class Motorway
+    class Motorway
     {
         public string highwayName;  //List of data members
-        public string streetType;
-        public string direction;
-        public string surface;
-        public int numberOfLanes;
-        public string toll;
+        public string streetType; 
+        public string direction; 
+        public string surface; 
+        public int numberOfLanes;      
+        public string toll;           
         public string tollMaintain;
 
         public Motorway(string highway)  //Instance method for highway name
@@ -44,6 +44,16 @@ namespace Week6_Group
             highwayName = highway;
             numberOfLanes = lanes;
         }
+
+        public Motorway(string street, string direct, string surf, string maint) //Additions method for flexibility
+        { 
+            streetType = street;
+            direction = direct;
+            surface = surf;
+            tollMaintain = maint;
+        }
+
+        
             
         public override string ToString() //ToString method to return data members and labels
         {
@@ -56,16 +66,19 @@ namespace Week6_Group
     {
         static void Main(string[] args)
         {
-            Motorway motorway = new Motorway("US Highway 80");
+            Motorway motorway = new Motorway("US Highway 80"); //Call Instance method for highway name and toll
             WriteLine(motorway);
             WriteLine("");
             
-            Motorway toll = new Motorway("International Highway 10", "Yes");
+            Motorway toll = new Motorway("International Highway 10", "Yes"); //Call Instance method for highway name and toll
             WriteLine(toll);
             WriteLine("");
             
-            Motorway lanes = new Motorway("State Highway 99", 5);
+            Motorway lanes = new Motorway("State Highway 99", 5); //Call Instance method for highway name and number of lanes
             WriteLine(lanes);
+
+            Motorway test = new Motorway("Boulevard", "North", "Blacktop", "State"); //Call Instance method to test remaining data members
+            WriteLine(test);
 
             ReadKey();
         }

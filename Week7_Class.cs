@@ -36,18 +36,14 @@ namespace Week7_Group
         {
             annualBudget = budget;
             annualvisitorAmount = visitors;
-            
         }
-
+        
         public Park(int visitors, double fee)
         {
             annualvisitorAmount = visitors;
             parkFee = fee;
-            
         }
-
-           
-
+            
         public Park(string name, string location, string type, int facility, double fee, int employees, int visitors, double budget)
         {
             parkName = name;
@@ -63,8 +59,8 @@ namespace Week7_Group
         public override string ToString()
         {
             return "\nName of Park: " + parkName + "\nPark Location: " + parkLocation + "\nType of Park: " + parkType + "\nNumber of Facilities Available: " + parkFacilities
-                + "\nEntrance Fee: " + parkFee + "\nNumber of Employees: " + employeeAmount + "\nAnnual Number of Visitors: " + annualvisitorAmount
-                + "\nAnnual Budget: " + annualBudget;
+                + "\nEntrance Fee: " + parkFee + "\nNumber of Employees: " + employeeAmount + "\nAnnual Number of Visitors: " + annualvisitorAmount + "\nAnnual Cost Per Visitor: " 
+                + annualBudget / annualvisitorAmount + "\nAnnual Revenue: " + parkFee * annualvisitorAmount;
         }
 
     }

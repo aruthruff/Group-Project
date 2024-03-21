@@ -23,20 +23,15 @@ namespace Week7_Group
 
         static void Main(string[] args)
         {
+            Park park = new Park();     // Testing Park class
 
-            Park park = new Park("Saugatuck State Park", "Holland, MI", "State Park");
-            WriteLine(park);
+            WriteLine(park.GetParkType());
+            WriteLine(park.GetParkInfo());
+            WriteLine($"Cost Per Visitor: ${park.ComputeCostPerVisitor():F2}");
+            WriteLine($"Revenue from Fees: ${park.ComputeRevenueFromFees():F2}");
 
-            Park facilities = new Park("Saugatuck State Park", "Holland, MI", 5 );
-            WriteLine(facilities);
-
-            Park visitorCost = new Park(100000.5, 10000);
-            WriteLine(visitorCost);
-
-            Park revenue = new Park(10000, 20.5);
-            WriteLine(revenue.ToString());
-            
             ReadKey();
         }
     }
 }
+

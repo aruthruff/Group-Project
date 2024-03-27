@@ -6,7 +6,10 @@
  *             Nathan Wenson
  * Date: 03/26/2024
  * Class: CITP 180
- * Purpose:  
+ * Purpose:  Write a program with three arrays. First two arrays have different number of elements. 
+ *           Values are declared as double type and are hard-coded (compile-time initialization).
+ *           Store product of first two arrays in the third array. Display contents of all three arrays 
+ *           (on a single line) in a Message Box using MessageBox class.  
  * Assignment: Chapter 7 - Programming Excercise 3
  */
 

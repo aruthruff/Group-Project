@@ -24,49 +24,46 @@ namespace Week8_Group
 {
     internal class Program
     {
-        
-       
-        
-        static void Main(string[] args)
+        //Method with parameters to display results
+        static void DisplayResults(double[] firstArray, double[] secondArray, double[] thirdArray)
         {
-            string caption = "System.Array Methods Illustrated";
-            double [] firstArray = new double[2] {10.5, 27};
-            double [] secondArray = new double[3] {99.7, 10.9, 7};
-            double [] thirdArray = new double[firstArray.Length + secondArray.Length] ;
-            /*double a = firstArray[0];
-            double b = firstArray[1];
-            double c = secondArray[0];
-            double d = secondArray[1];
-            double e = secondArray[2];
-            double total = a * b * c * d * e;*/
-
-            for (int i = 0; i < firstArray.Length; i++)
-            {
-               
-                WriteLine (firstArray[i] * secondArray[i] + " ");
-            }
-
-            //WriteLine(Convert.ToString(total));
-            string outputMsg = "";
-            outputMsg += "ThirdArray: ";
-           
-            foreach (double x in firstArray)
+            string caption = "Array Contents";   //Caption for MessageBox
+            string outputMsg = "";               //Custom message for each array
+            string outputMsg2 = "";
+            string outputMsg3 = "";
+            outputMsg += "First Array: ";        //Custom message for each array
+            outputMsg2 += "Second Array: ";
+            outputMsg3 += "Third Array: ";
+            foreach (double x in firstArray)     //Gets array values and combine with output message
             {
                 outputMsg += x + ", ";
             }
             foreach (double y in secondArray)
             {
-                outputMsg += y + ", ";
+                outputMsg2 += y + ", ";
             }
-            /*foreach (double z in thirdArray)
+            foreach (double z in thirdArray)
             {
-                outputMsg = z + ", ";
-            }*/
-            MessageBox.Show(outputMsg);
-            ReadKey();
+                outputMsg3 += z + " ";
+            }
             
-            firstArray.CopyTo(thirdArray, 0);
-            secondArray.CopyTo(thirdArray, 0);
+            MessageBox.Show(outputMsg + outputMsg2 + outputMsg3, caption); //Display results using MessageBox class
+            ReadKey();
+        }
+        
+        //Main method 
+        static void Main(string[] args)
+        {
+            double [] firstArray = new double[2] {10.5, 27};             //Compile-time initialization of first two arrays
+            double [] secondArray = new double[3] {99.7, 10.9, 7};       //Two original arrays have different number of elements
+
+            double sum = firstArray.Sum();          //Get sum of first array
+            double sum2 = secondArray.Sum();        //Get sum of second array
+            double sum3 = sum * sum2;               //Get product of first two arrays
+            
+            double [] thirdArray = new double[1] {sum3};  //Store product of first two arrays in the third array
+           
+            DisplayResults(firstArray, secondArray, thirdArray); //Call method to display results
         }
     }
 }

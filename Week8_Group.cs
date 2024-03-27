@@ -36,11 +36,11 @@ namespace Week8_Group
             outputMsg3 += "Third Array: ";
             foreach (double x in firstArray)     //Gets array values and combine with output message
             {
-                outputMsg += x + ", ";
+                outputMsg += x  + " | ";
             }
             foreach (double y in secondArray)
             {
-                outputMsg2 += y + ", ";
+                outputMsg2 += y + " | ";
             }
             foreach (double z in thirdArray)
             {

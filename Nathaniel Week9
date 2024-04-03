@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace Week9Group
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /* Write an application that allows the user to input monthly rainfall amounts for one year storing the values in an array. 
+             * Create a second array that holds the names of the month. 
+             * Produce a report showing the month name along with the rainfall amount and its variance from the mean. 
+             * Calculate and display the average rainfall for the year.
+             */
+
+            string[] months = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+            double[] rainfall = new double[12];
+            double mean = 0;
+
+            for (int x = 0; x < months.Length;)
+            {
+                Write("Enter rainfall for {0}: ", months[x]);
+                if (double.TryParse(ReadLine(), out rainfall[x]))
+                {
+                    x++;
+                }
+                else
+                {
+                    WriteLine("Improper input");
+                }
+            }
+
+            foreach (double amount in rainfall)
+            {
+                mean += amount;
+            }
+            mean = mean / rainfall.Length;
+
+
+            WriteLine("\n------------------Report------------------");
+            WriteLine("Average Rainfall: {0}",mean);
+            WriteLine("--------------------------------------------");
+            WriteLine("Month\tRain\tVarience");
+            WriteLine("--------------------------------------------");
+            for (int x = 0; x < months.Length; x++)
+            {
+                WriteLine("{0}\t:\t{1}\t{2}", months[x], rainfall[x], mean - rainfall[x]);
+            }
+
+            ReadKey();
+        }
+    }
+}

@@ -27,27 +27,32 @@ namespace Week9_Group
     {
         static void Main(string[] args)
         {
+            WriteLine("Monthly Rainfall Application");
             // Array to store rainfall amounts for each month
             double[] rainfall = new double[12];
 
             // Array to store month names
             string[] months = { "January:  ", "February: ", "March:    ", "April:    ", "May:      ", "June:     ", "July:     ", "August:   ", "September:", "October:  ", "November: ", "December: " };
 
-            
             // Input monthly rainfall amounts
             for (int i = 0; i < 12; i++)
             {
-                Write($"Enter rainfall amount for {months[i]} ");
+                Write($"\nEnter rainfall amount for {months[i]} ");
                 
                 string userInput = ReadLine();
-                if (double.TryParse(userInput, out rainfall[i])){ }
+                bool success = double.TryParse(userInput, out rainfall[i]);
+                
+                if (success)
+                {
+                    WriteLine($"You entered: {userInput}");
+                }
                 
                 else
                 {
                     WriteLine("\nInvalid Data -" + " Enter numerical value");
-                    Write($"Enter rainfall amount for {months[i]} ");
+                    Write($"\nEnter rainfall amount for {months[i]} ");
                     rainfall[i] = Convert.ToDouble(ReadLine());
-                    WriteLine($"\nNUMBER STORED FOR {months[i]} {rainfall[i]}");
+                    WriteLine($"\nNumber enterd for {months[i]} {rainfall[i]} ");
                 }
             }
                 

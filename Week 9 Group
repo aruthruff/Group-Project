@@ -1,0 +1,39 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Array to store rainfall amounts for each month
+        double[] rainfall = new double[12];
+        
+        // Array to store month names
+        string[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+
+        // Input monthly rainfall amounts
+        for (int i = 0; i < 12; i++)
+        {
+            Console.Write($"Enter rainfall amount for {months[i]}: ");
+            rainfall[i] = Convert.ToDouble(Console.ReadLine());
+        }
+
+        // Calculate average rainfall
+        double totalRainfall = 0;
+        foreach (double amount in rainfall)
+        {
+            totalRainfall += amount;
+        }
+        double averageRainfall = totalRainfall / 12;
+
+        // Display report
+        Console.WriteLine("\nMonth\t\tRainfall\tVariance from Mean");
+        Console.WriteLine("-----------------------------------------");
+        for (int i = 0; i < 12; i++)
+        {
+            double variance = rainfall[i] - averageRainfall;
+            Console.WriteLine($"{months[i]}\t\t{rainfall[i]} \t\t{variance}");
+        }
+
+        Console.WriteLine("\nAverage Rainfall for the Year: " + averageRainfall);
+    }
+}

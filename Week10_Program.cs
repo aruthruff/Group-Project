@@ -53,6 +53,7 @@ namespace Week_10Group
         // Generate mailing label
         static void Main(string[] args)
         {
+
             string fullName;
             string birthDate;
             string userInput;
@@ -64,7 +65,7 @@ namespace Week_10Group
             {
 
                 MainMenu(out fullName, out birthDate, out subMonth, out zipCode);
-                CustomerCode customerCode = new CustomerCode(fullName, birthDate, zipCode);
+                CustomerCode customerCode = new CustomerCode(fullName, birthDate, subMonth);
 
                 int nameLength = fullName.Replace(" ", "").Length;
                 WriteLine("Your mail label is: {0}{1}{2}{3}{4}", customerCode.GetLastName, customerCode.GetBirthYear % 100, nameLength, customerCode.GetSubMonth, zipCode % 100);

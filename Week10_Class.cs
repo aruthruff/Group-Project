@@ -29,10 +29,10 @@ namespace Week_10Group
     {
         private string fullName;
         private string birthDate;
-        private string lastName;
-        private string subscriptionMonth;
-        private int yearOfBirth;
         private int monthAbbreviation;
+        private string lastName;
+        private int yearOfBirth;
+        private string subscriptionMonth;
         
 
         //Default Constructor
@@ -65,9 +65,9 @@ namespace Week_10Group
         public void ParseMonth(int z)
         {
             string[] Months = 
-                {"Jan", "Feb", "Mar", "Apr", "May",
+                { "Jan", "Feb", "Mar", "Apr", "May",
                  "Jun", "Jul", "Aug", "Sep", "Oct",
-                 "Nov", "Dec"};
+                 "Nov", "Dec" };
 
             Months[0] = Months[0].TrimStart('0');
 
@@ -115,7 +115,6 @@ namespace Week_10Group
         }
     }
 }
-
 
     
 

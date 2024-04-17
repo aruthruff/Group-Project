@@ -1,0 +1,55 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        while (true)
+        {
+            Console.WriteLine("Welcome to the Guessing Game!");
+            Console.WriteLine("Press the up arrow key to start a new game or Q to quit.");
+
+            var key = Console.ReadKey(intercept: true).Key;
+            if (key == ConsoleKey.Q)
+                break;
+            else if (key == ConsoleKey.UpArrow)
+                PlayGame();
+        }
+    }
+
+    static void PlayGame()
+    {
+        Random random = new Random();
+        int randomNumber = random.Next(1, 101);
+        int guesses = 0;
+
+        while (true)
+        {
+            Console.Write("Guess the number (1-100): ");
+            string input = Console.ReadLine();
+
+            if (int.TryParse(input, out int guess))
+            {
+                guesses++;
+
+                if (guess == randomNumber)
+                {
+                    Console.WriteLine($"Congratulations! You guessed the number {randomNumber} in {guesses} guesses.");
+                    break;
+                }
+                else if (guess < randomNumber)
+                {
+                    Console.WriteLine("Too low! Try again.");
+                }
+                else
+                {
+                    Console.WriteLine("Too high! Try again.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a valid number.");
+            }
+        }
+    }
+}

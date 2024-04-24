@@ -1,0 +1,102 @@
+using System;
+using System.Windows.Forms;
+
+namespace BankingAccountRegister
+{
+    public partial class MainForm : Form
+    {
+        private Customer customer;
+
+        public MainForm()
+        {
+            InitializeComponent();
+        }
+
+        private void CreateAccountButton_Click(object sender, EventArgs e)
+        {
+            string accountName = accountNameTextBox.Text;
+            string accountNumber = accountNumberTextBox.Text;
+            decimal initialBalance;
+
+            if (decimal.TryParse(initialBalanceTextBox.Text, out initialBalance))
+            {
+                customer = new Customer(accountName, accountNumber, initialBalance);
+                MessageBox.Show("Account created successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid initial balance.");
+            }
+        }
+
+        private void UpdateAccountButton_Click(object sender, EventArgs e)
+        {
+            if (customer == null)
+            {
+                MessageBox.Show("Please create an account first.");
+                return;
+            }
+
+            decimal depositAmount, withdrawAmount;
+
+            if (decimal.TryParse(depositTextBox.Text, out depositAmount))
+            {
+                customer.Deposit(depositAmount);
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid deposit amount.");
+            }
+
+            if (decimal.TryParse(withdrawTextBox.Text, out withdrawAmount))
+            {
+                customer.Withdraw(withdrawAmount);
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid withdraw amount.");
+            }
+
+            UpdateBalanceLabel();
+        }
+
+        private void UpdateBalanceLabel()
+        {
+            if (customer != null)
+            {
+                balanceLabel.Text = "Balance: $" + customer.Balance.ToString("0.00");
+            }
+        }
+    }
+
+    public class Customer
+    {
+        public string AccountName { get; }
+        public string AccountNumber { get; }
+        public decimal Balance { get; private set; }
+
+        public Customer(string accountName, string accountNumber, decimal initialBalance)
+        {
+            AccountName = accountName;
+            AccountNumber = accountNumber;
+            Balance = initialBalance;
+        }
+
+        public void Deposit(decimal amount)
+        {
+            Balance += amount;
+        }
+
+        public void Withdraw(decimal amount)
+        {
+            if (amount <= Balance)
+            {
+                Balance -= amount;
+            }
+            else
+            {
+                MessageBox.Show("Insufficient funds.");
+            }
+        }
+    }
+}

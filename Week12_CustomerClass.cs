@@ -77,15 +77,6 @@ namespace Week12_Group
             textWithdraw.Text = "";
         }
 
-        private void textBalance_TextChanged(object sender, EventArgs e)
-        {
-            if (textBalance.Text == "" || textDeposit.Text == "" && textWithdraw.Text != "")
-            {
-                MessageBox.Show("Please fill the Account Name and Account Number");
-                textWithdraw.Text = "";
-            }
-        }
-
         private void textDeposit_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

@@ -1,0 +1,47 @@
+// MainForm.cs
+
+using System;
+using System.Windows.Forms;
+
+namespace PizzaDeliveryApp
+{
+    public partial class MainForm : Form
+    {
+        public MainForm()
+        {
+            InitializeComponent();
+        }
+
+        private void placeOrderButton_Click(object sender, EventArgs e)
+        {
+            // Create an instance of OrderSummaryForm and pass necessary data
+            OrderSummaryForm summaryForm = new OrderSummaryForm(
+                addressTextBox.Text,
+                phoneNumberTextBox.Text,
+                emailTextBox.Text,
+                GetSelectedPizza(),
+                GetSelectedToppings(),
+                GetSelectedSize()
+            );
+            summaryForm.ShowDialog();
+        }
+
+        private Pizza GetSelectedPizza()
+        {
+            // Implement logic to get selected pizza type (e.g., based on radio buttons)
+            // Return the selected pizza object
+        }
+
+        private List<Topping> GetSelectedToppings()
+        {
+            // Implement logic to get selected toppings (e.g., based on checkboxes)
+            // Return the list of selected toppings
+        }
+
+        private PizzaSize GetSelectedSize()
+        {
+            // Implement logic to get selected pizza size (e.g., based on radio buttons)
+            // Return the selected size
+        }
+    }
+}
